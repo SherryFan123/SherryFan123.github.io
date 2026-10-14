@@ -1,0 +1,9 @@
+*{box-sizing:border-box;margin:0}body{background:#0e0e0e;color:#e8e6e1;font:16px/1.5 "Helvetica Neue",Helvetica,Arial,sans-serif}
+.wrap{max-width:1400px;margin:0 auto;padding:56px 28px}
+.hero h1{font-weight:300;font-size:clamp(40px,7vw,84px);letter-spacing:-.02em;line-height:1.05}.hero p{color:#8a8780;margin:18px 0 56px;font-size:18px}
+/* masonry: vertical + horizontal interleave naturally down columns */
+.grid{columns:3 340px;column-gap:24px}
+.v{break-inside:avoid;margin-bottom:28px}
+.v .frame{background:#000;aspect-ratio:16/9;overflow:hidden}.v.vert .frame{aspect-ratio:9/16}
+.v video,.v iframe{width:100%;height:100%;border:0;display:block;object-fit:cover}.v p{margin-top:10px;font-size:14px;color:#b5b2ab}
+footer{margin-top:60px;color:#555;font-size:12px}
