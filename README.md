@@ -2,6 +2,8 @@
 
 Live site: https://sherryfan123.github.io/
 
+All video tiles are the **same size** (16:9 frames). Vertical footage is cropped to fit (`object-fit: cover`).
+
 One dark, video-first site. **Home** (`index.html`) is the WSJ reel grid. **Production Crew** (`production-crew.html`) embeds YouTube work. Edit everything in **`videos.js`**.
 
 ## Remove / reorder a video
