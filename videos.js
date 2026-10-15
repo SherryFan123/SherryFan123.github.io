@@ -1,10 +1,11 @@
 // ============================================================
-//  ALL VIDEOS LIVE HERE (shown in this order on the home page).
-//  Delete a line to remove a video. Reorder lines to reorder the grid.
-//  source:   local file ("media/x.mp4") OR Vimeo URL/ID ("https://vimeo.com/123" or "123")
+//  ALL VIDEOS LIVE HERE. Delete a line to remove a video.
+//  Reorder lines within a section to reorder that page's grid.
+//  source:   local ("media/x.mp4") | Vimeo URL/ID | YouTube URL/ID
+//  section:  "home" (default, WSJ grid) | "crew" (Production Crew)
 //  poster:   optional thumbnail (local videos)
 //  vertical: true for 9:16 videos
-//  autoplay: true = plays muted on loop while on screen (use on ~1 in 3)
+//  autoplay: true = plays muted on loop while on screen (~1 in 3)
 // ============================================================
 window.VIDEOS = [
   { title: "Spirit Airlines", source: "media/camera-vv-spiritairv3c.mp4", poster: "media/camera-vv-spiritairv3c.jpg", vertical: true, autoplay: true },  // vv.spiritairv3c.mp4
@@ -26,5 +27,8 @@ window.VIDEOS = [
   { title: "Adjustable-Rate Mortgages Return", source: "media/assist-vv-armresurgencefinal.mp4", poster: "media/assist-vv-armresurgencefinal.jpg", vertical: true },  // vv.armresurgencefinal.mp4
   { title: "Inflation Bonds", source: "media/camera-vv-inflationbondsfinecut4.mp4", poster: "media/camera-vv-inflationbondsfinecut4.jpg", vertical: true, autoplay: true },  // vv.inflationbondsfinecut4.mp4
   { title: "Policy Explainer", source: "media/assist-v5.mp4", poster: "media/assist-v5.jpg", vertical: true },  // V5.mp4
+  { title: "NCT 127: The Lost Boys — Teaser | Disney+", source: "https://www.youtube.com/watch?v=68zc1TV-3N4", section: "crew", autoplay: true },
+  { title: "Fallen Idols: Nick and Aaron Carter — Official Trailer", source: "https://www.youtube.com/watch?v=i7_DXJqW6hY", section: "crew" },
+  { title: "Christiane Amanpour — The Amanpour Hour & Covering War in Gaza | The Daily Show", source: "https://www.youtube.com/watch?v=d7JvuQPFG7E", section: "crew" },
 // @@VIDEOS@@
 ];
