@@ -18,7 +18,7 @@ function cardCrew(v){
   var yt=youtubeId(v.source);
   if(!yt) return '';
   return `<div class="v"><div class="frame thumb" data-yt="${yt}" role="button" tabindex="0" aria-label="Play ${v.title.replace(/"/g,'&quot;')}">
-    <img src="https://i.ytimg.com/vi/${yt}/maxresdefault.jpg" alt="" loading="lazy" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${yt}/hqdefault.jpg'">
+    <img src="https://i.ytimg.com/vi/${yt}/hqdefault.jpg" alt="" loading="lazy" data-max="https://i.ytimg.com/vi/${yt}/maxresdefault.jpg">
   </div><p>${v.title}</p></div>`;
 }
 
@@ -45,6 +45,9 @@ function bindHomeAutoplay(root){
 }
 
 function bindCrewThumbs(root){
+  root.querySelectorAll('.frame.thumb img[data-max]').forEach(img=>{
+    var t=new Image(); t.onload=function(){ if(t.naturalWidth>=480) img.src=img.dataset.max; }; t.src=img.dataset.max;
+  });
   root.querySelectorAll('.frame.thumb').forEach(frame=>{
     function play(){
       var id=frame.dataset.yt; if(!id||frame.dataset.playing) return;
