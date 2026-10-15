@@ -61,6 +61,9 @@ function bindCrewThumbs(root){
 
 function render(el,section){
   var list=VIDEOS.filter(v=>(v.section||'home')===section);
+  if(section==='home'){
+    list=list.filter(v=>v.vertical).concat(list.filter(v=>!v.vertical));
+  }
   if(section==='crew'){
     el.className='grid grid-crew';
     el.innerHTML=list.map(cardCrew).join('');

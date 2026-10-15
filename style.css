@@ -4,21 +4,24 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1480px;margin:0 auto;paddin
 .top a{color:#6b6862}.top a:hover,.top a.on{color:#e8e6e1}
 .hero h1{font-weight:300;font-size:clamp(40px,7vw,84px);letter-spacing:-.02em;line-height:1.05}.hero p{color:#8a8780;margin:18px 0 56px;font-size:18px}
 
-/* Home: equal HEIGHT tiles; verticals stay 9:16 (narrow), horizontals 16:9 (wide) */
+/* Home: all verticals first, then horizontals. Separate sizing. */
 .grid-home{display:flex;flex-wrap:wrap;gap:28px 20px;align-items:flex-start}
-.grid-home .v{display:flex;flex-direction:column;min-width:0}
-.grid-home .v .frame{
-  --h:min(48vw,440px);
-  height:var(--h);width:calc(var(--h)*16/9);
-  position:relative;background:#111;overflow:hidden;flex:0 0 auto
-}
-.grid-home .v.vert .frame{width:calc(var(--h)*9/16)}
+.grid-home .v{display:flex;flex-direction:column;flex:0 0 auto;min-width:0}
+.grid-home .v .frame{position:relative;background:#111;overflow:hidden;width:100%}
+
+/* Verticals: 90% of first masonry draft (~432px → 389; using 396 = 0.9×440) → 396×704 */
+.grid-home .v.vert{width:396px;max-width:100%}
+.grid-home .v.vert .frame{aspect-ratio:9/16}
+
+/* Horizontals: lock prior size 666×374 @ 1440 */
+.grid-home .v:not(.vert){width:666px;max-width:100%}
+.grid-home .v:not(.vert) .frame{aspect-ratio:16/9}
+
 .grid-home .v video,.grid-home .v iframe{
   position:absolute;inset:0;width:100%;height:100%;border:0;display:block;object-fit:cover;cursor:pointer
 }
 .grid-home .v p{margin-top:10px;font-size:13px;color:#b5b2ab;max-width:100%}
 
-/* Crew: ~30% larger 16:9 tiles, clean thumbs */
 .grid-crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(446px,1fr));gap:36px 28px}
 .grid-crew .v{display:flex;flex-direction:column;min-width:0}
 .grid-crew .v .frame{position:relative;background:#000;aspect-ratio:16/9;overflow:hidden;width:100%;cursor:pointer}
@@ -28,6 +31,6 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1480px;margin:0 auto;paddin
 footer{margin-top:60px;color:#555;font-size:12px}
 
 @media(max-width:720px){
-  .grid-home .v .frame{--h:min(70vw,360px)}
+  .grid-home .v.vert,.grid-home .v:not(.vert){width:100%}
   .grid-crew{grid-template-columns:1fr}
 }
