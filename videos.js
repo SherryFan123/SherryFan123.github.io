@@ -2,10 +2,10 @@
 //  ALL VIDEOS LIVE HERE. Delete a line to remove a video.
 //  Reorder lines within a section to reorder that page's grid.
 //  source:   local ("media/x.mp4") | Vimeo URL/ID | YouTube URL/ID
-//  section:  "home" (default, WSJ grid) | "crew" (Production Crew)
+//  section:  "home" (default, WSJ grid) | "crew" (Production Crew) | "dp" (DP Work)
 //  poster:   optional thumbnail (local videos)
 //  vertical: true for 9:16 videos (home keeps true 9:16 frames)
-//  Home: all videos autoplay muted when on screen (autoplay flag ignored).
+//  Home & DP: all videos autoplay muted when on screen (autoplay flag ignored).
 //  Crew: clean YouTube thumbnail; click to play (no autoplay chrome).
 // ============================================================
 window.VIDEOS = [
@@ -33,5 +33,7 @@ window.VIDEOS = [
   { title: "Christiane Amanpour — The Amanpour Hour & Covering War in Gaza | The Daily Show", source: "https://www.youtube.com/watch?v=d7JvuQPFG7E", section: "crew" },
   { title: "Jon Stewart’s DNC Recap: Oprah Calls Out Cat Ladies, Dem Vibes & Kamala’s Moment | The Daily Show", source: "https://www.youtube.com/watch?v=e_gkEviOWIk", section: "crew" },
   { title: "Jon Stewart Tackles the RNC and Trump Assassination Attempt | The Daily Show", source: "https://www.youtube.com/watch?v=u8yL3I_6Oco", section: "crew" },
+  { title: "Sucka", source: "media/dp-sucka-sfx.mp4", poster: "media/dp-sucka-sfx.jpg", vertical: true, section: "dp" },  // SUCKA SFX.mov — guessed title
+  { title: "Sucka (Draft)", source: "media/dp-draft-website.mp4", poster: "media/dp-draft-website.jpg", section: "dp" },  // DRAFT Website.mp4 — guessed title
 // @@VIDEOS@@
 ];

@@ -61,7 +61,7 @@ function bindCrewThumbs(root){
 
 function render(el,section){
   var list=VIDEOS.filter(v=>(v.section||'home')===section);
-  if(section==='home'){
+  if(section==='home'||section==='dp'){
     list=list.filter(v=>v.vertical).concat(list.filter(v=>!v.vertical));
   }
   if(section==='crew'){
@@ -76,5 +76,5 @@ function render(el,section){
 }
 
 function siteNav(cur){
-  return `<nav class="top"><a href="index.html" class="${cur==='home'?'on':''}">WSJ</a><a href="production-crew.html" class="${cur==='crew'?'on':''}">Production Crew</a></nav>`;
+  return `<nav class="top"><a href="index.html" class="${cur==='home'?'on':''}">WSJ</a><a href="production-crew.html" class="${cur==='crew'?'on':''}">Production Crew</a><a href="dp-work.html" class="${cur==='dp'?'on':''}">DP Work</a></nav>`;
 }

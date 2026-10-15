@@ -4,7 +4,7 @@ Tip: afterwards, reorder lines in videos.js to mix vertical/horizontal nicely.
 Safe to re-run: skips files already present in videos.js."""
 import os,re,subprocess,json
 SRC="/workspace/videos"; HERE=os.path.dirname(os.path.abspath(__file__))
-FOLDERS=["Vertical","Camera","Assist","Horiz"]  # source folders scanned (order doesn't matter on site)
+FOLDERS=["Vertical","Camera","Assist","Horiz","DP"]  # source folders scanned (order doesn't matter on site)
 def title(fn):
     s=os.path.splitext(fn)[0]
     m=re.search(r"YouTube_(.+?)_Media_",s)
