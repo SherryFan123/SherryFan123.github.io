@@ -2,7 +2,9 @@
 
 Live site: https://sherryfan123.github.io/
 
-All video tiles are the **same size** (16:9 frames). Vertical footage is cropped to fit (`object-fit: cover`).
+**Home:** vertical clips stay 9:16 and horizontals 16:9, sharing the same tile **height** so nothing looks tiny. All home videos autoplay muted (click to unmute).
+
+**Production Crew:** larger 16:9 tiles; clean YouTube thumbnails (no chrome) — click to play.
 
 One dark, video-first site. **Home** (`index.html`) is the WSJ reel grid. **Production Crew** (`production-crew.html`) embeds YouTube work. Edit everything in **`videos.js`**.
 

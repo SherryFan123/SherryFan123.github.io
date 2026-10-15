@@ -4,8 +4,9 @@
 //  source:   local ("media/x.mp4") | Vimeo URL/ID | YouTube URL/ID
 //  section:  "home" (default, WSJ grid) | "crew" (Production Crew)
 //  poster:   optional thumbnail (local videos)
-//  vertical: true for 9:16 videos
-//  autoplay: true = plays muted on loop while on screen (~1 in 3)
+//  vertical: true for 9:16 videos (home keeps true 9:16 frames)
+//  Home: all videos autoplay muted when on screen (autoplay flag ignored).
+//  Crew: clean YouTube thumbnail; click to play (no autoplay chrome).
 // ============================================================
 window.VIDEOS = [
   { title: "Spirit Airlines", source: "media/camera-vv-spiritairv3c.mp4", poster: "media/camera-vv-spiritairv3c.jpg", vertical: true, autoplay: true },  // vv.spiritairv3c.mp4
