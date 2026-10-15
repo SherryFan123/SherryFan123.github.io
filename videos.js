@@ -31,6 +31,6 @@ window.VIDEOS = [
   { title: "Fallen Idols: Nick and Aaron Carter — Official Trailer", source: "https://www.youtube.com/watch?v=i7_DXJqW6hY", section: "crew" },
   { title: "Christiane Amanpour — The Amanpour Hour & Covering War in Gaza | The Daily Show", source: "https://www.youtube.com/watch?v=d7JvuQPFG7E", section: "crew" },
   { title: "Jon Stewart’s DNC Recap: Oprah Calls Out Cat Ladies, Dem Vibes & Kamala’s Moment | The Daily Show", source: "https://www.youtube.com/watch?v=e_gkEviOWIk", section: "crew" },
-  { title: "Small Town Values & Absent Diversity at the RNC's of Yore | The Daily Show", source: "https://www.youtube.com/watch?v=5BbDkzDuoaw", section: "crew" },
+  { title: "Jon Stewart Tackles the RNC and Trump Assassination Attempt | The Daily Show", source: "https://www.youtube.com/watch?v=u8yL3I_6Oco", section: "crew" },
 // @@VIDEOS@@
 ];
