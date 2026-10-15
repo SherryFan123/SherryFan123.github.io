@@ -30,5 +30,6 @@ window.VIDEOS = [
   { title: "NCT 127: The Lost Boys — Teaser | Disney+", source: "https://www.youtube.com/watch?v=68zc1TV-3N4", section: "crew", autoplay: true },
   { title: "Fallen Idols: Nick and Aaron Carter — Official Trailer", source: "https://www.youtube.com/watch?v=i7_DXJqW6hY", section: "crew" },
   { title: "Christiane Amanpour — The Amanpour Hour & Covering War in Gaza | The Daily Show", source: "https://www.youtube.com/watch?v=d7JvuQPFG7E", section: "crew" },
+  { title: "Jon Stewart’s DNC Recap: Oprah Calls Out Cat Ladies, Dem Vibes & Kamala’s Moment | The Daily Show", source: "https://www.youtube.com/watch?v=e_gkEviOWIk", section: "crew" },
 // @@VIDEOS@@
 ];
