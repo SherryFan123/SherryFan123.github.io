@@ -35,5 +35,6 @@ window.VIDEOS = [
   { title: "Jon Stewart Tackles the RNC and Trump Assassination Attempt | The Daily Show", source: "https://www.youtube.com/watch?v=u8yL3I_6Oco", section: "crew" },
   { title: "Sucka", source: "media/dp-sucka-sfx.mp4", poster: "media/dp-sucka-sfx.jpg", vertical: true, section: "dp" },  // SUCKA SFX.mov — guessed title
   { title: "Sucka (Draft)", source: "media/dp-draft-website.mp4", poster: "media/dp-draft-website.jpg", section: "dp" },  // DRAFT Website.mp4 — guessed title
+  { title: "Mountain Valley Spring Water — Spec Ad", source: "media/dp-mountainvalley-ad-v4-4k.mp4", poster: "media/dp-mountainvalley-ad-v4-4k.jpg", section: "dp" },  // MountainValley_ad_v4_4K.mp4
 // @@VIDEOS@@
 ];
