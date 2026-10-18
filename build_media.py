@@ -32,7 +32,7 @@ for folder in FOLDERS:
         subprocess.run(["ffmpeg","-y","-v","error","-i",src,"-vf",scale+",scale=trunc(iw/2)*2:trunc(ih/2)*2","-c:v","libx264","-preset","medium","-b:v",f"{vk}k","-maxrate",f"{vk}k","-bufsize",f"{2*vk}k","-pix_fmt","yuv420p","-c:a","aac","-b:a","128k","-movflags","+faststart",os.path.join(HERE,out)],check=True)
         subprocess.run(["ffmpeg","-y","-v","error","-ss","2","-i",os.path.join(HERE,out),"-frames:v","1","-q:v","4",os.path.join(HERE,poster)],check=True)
         auto=(n_existing+len(new))%3==0
-        new.append(f'  {{ title: {json.dumps(title(fn))}, source: "{out}", poster: "{poster}"{", vertical: true" if vert else ""}{", autoplay: true" if auto else ""} }},  // {fn}')
+        new.append(f'  {{ title: {json.dumps(title(fn))}, source: "{out}", poster: "{poster}"{", vertical: true, section: \"wsj-app\"" if vert else ""}{", autoplay: true" if auto else ""} }},  // {fn}')
 if new:
     js=js.replace("// @@VIDEOS@@","\n".join(new)+"\n// @@VIDEOS@@")
     open(os.path.join(HERE,"videos.js"),"w").write(js)

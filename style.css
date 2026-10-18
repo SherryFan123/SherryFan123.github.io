@@ -3,34 +3,41 @@ a{color:inherit;text-decoration:none}.wrap{max-width:1480px;margin:0 auto;paddin
 .top{display:flex;gap:28px;margin-bottom:40px;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
 .top a{color:#6b6862}.top a:hover,.top a.on{color:#e8e6e1}
 .hero h1{font-weight:300;font-size:clamp(40px,7vw,84px);letter-spacing:-.02em;line-height:1.05}.hero p{color:#8a8780;margin:18px 0 56px;font-size:18px}
+.hero p.contact{display:flex;flex-direction:column;gap:2px;font-size:16px}.hero p.contact a{color:#8a8780;width:fit-content}.hero p.contact a:hover{color:#e8e6e1}
 
-/* Home: all verticals first, then horizontals. Separate sizing. */
-.grid-home{display:flex;flex-wrap:wrap;gap:28px 20px;align-items:flex-start}
-.grid-home .v{display:flex;flex-direction:column;flex:0 0 auto;min-width:0}
-.grid-home .v .frame{position:relative;background:#111;overflow:hidden;width:100%}
+/* Video grid (all pages): centered rows, incl. partial last row */
+.grid{display:flex;flex-wrap:wrap;justify-content:center;gap:28px 20px;align-items:flex-start}
+.grid .v{display:flex;flex-direction:column;flex:0 0 auto;min-width:0}
+.grid .v .frame{position:relative;background:#111;overflow:hidden;width:100%;cursor:pointer}
+/* Verticals 396x704 */
+.grid .v.vert{width:396px;max-width:100%}
+.grid .v.vert .frame{aspect-ratio:9/16}
+/* Horizontals 666x375 */
+.grid .v:not(.vert){width:666px;max-width:100%}
+.grid .v:not(.vert) .frame{aspect-ratio:16/9}
+/* Production Crew tiles keep their previous size */
+.grid-crew{gap:36px 28px}
+.grid-crew .v:not(.vert){width:456px}
+.grid-crew .v .frame{background:#000}
 
-/* Verticals: 90% of first masonry draft (~432px → 389; using 396 = 0.9×440) → 396×704 */
-.grid-home .v.vert{width:396px;max-width:100%}
-.grid-home .v.vert .frame{aspect-ratio:9/16}
+.grid .v video,.grid .v iframe,.grid .v img.poster{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;object-fit:cover}
+/* YouTube: player is taller than the tile so title bar / logo sit in clipped black bars */
+.grid .v[data-kind=yt] iframe{top:-70px;height:calc(100% + 140px);pointer-events:none}
+.grid .v[data-kind=yt] img.poster{z-index:2;transition:opacity .6s}
+.grid .v[data-kind=yt].live img.poster{opacity:0}
+.grid .v .hit{position:absolute;inset:0;z-index:3}
+.grid .v p{margin-top:10px;font-size:13px;color:#b5b2ab;max-width:100%}
+.grid-crew .v p{margin-top:12px;font-size:14px;min-height:2.8em}
 
-/* Horizontals: lock prior size 666×374 @ 1440 */
-.grid-home .v:not(.vert){width:666px;max-width:100%}
-.grid-home .v:not(.vert) .frame{aspect-ratio:16/9}
-
-.grid-home .v video,.grid-home .v iframe{
-  position:absolute;inset:0;width:100%;height:100%;border:0;display:block;object-fit:cover;cursor:pointer
-}
-.grid-home .v p{margin-top:10px;font-size:13px;color:#b5b2ab;max-width:100%}
-
-.grid-crew{display:grid;grid-template-columns:repeat(auto-fill,minmax(446px,1fr));gap:36px 28px}
-.grid-crew .v{display:flex;flex-direction:column;min-width:0}
-.grid-crew .v .frame{position:relative;background:#000;aspect-ratio:16/9;overflow:hidden;width:100%;cursor:pointer}
-.grid-crew .v .frame img,.grid-crew .v .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;object-fit:cover}
-.grid-crew .v p{margin-top:12px;font-size:14px;color:#b5b2ab;min-height:2.8em}
+/* small sound indicator */
+.snd{position:absolute;right:10px;bottom:10px;z-index:4;width:26px;height:26px;border-radius:50%;background:rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;opacity:.55;transition:opacity .2s;pointer-events:none}
+.snd svg{width:15px;height:15px;fill:none;stroke:#e8e6e1;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.snd svg path:first-child{fill:#e8e6e1;stroke:none}
+.snd .on{display:none}.v.sound .snd .on{display:inline}.v.sound .snd .off{display:none}
+.v.sound .snd,.frame:hover .snd{opacity:1}
 
 footer{margin-top:60px;color:#555;font-size:12px}
 
 @media(max-width:720px){
-  .grid-home .v.vert,.grid-home .v:not(.vert){width:100%}
-  .grid-crew{grid-template-columns:1fr}
+  .grid .v.vert,.grid .v:not(.vert),.grid-crew .v:not(.vert){width:100%}
 }
