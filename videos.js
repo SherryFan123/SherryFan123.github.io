@@ -41,5 +41,6 @@ window.VIDEOS = [
   { title: "Sucka (Draft)", source: "media/dp-draft-website.mp4", poster: "media/dp-draft-website.jpg", section: "dp" },  // DRAFT Website.mp4 — guessed title
   { title: "Mountain Valley Spring Water", source: "media/dp-mountainvalley-ad-v4-4k.mp4", poster: "media/dp-mountainvalley-ad-v4-4k.jpg", section: "dp" },  // MountainValley_ad_v4_4K.mp4
   { title: "Redwoods", source: "media/dp-new-1.mp4", poster: "media/dp-new-1.jpg", section: "dp" },  // dp-new-1.mp4
+  { title: "YSL MYSLF", source: "media/dp-ysl-myslf.mp4", poster: "media/dp-ysl-myslf.jpg", section: "dp" },  // ysl-myslf.mp4
 // @@VIDEOS@@
 ];
