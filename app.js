@@ -90,19 +90,51 @@ function setupCard(el,io){
   io.observe(el);
 }
 
+
+/* ---------- Production Crew: clean thumbnail, iframe loads + plays only on click ---------- */
+function cardCrew(v){
+  var yt=youtubeId(v.source);
+  if(!yt) return '';
+  return `<div class="v"><div class="frame thumb" data-yt="${yt}" role="button" tabindex="0" aria-label="Play ${esc(v.title)}">
+    <img class="poster" src="https://i.ytimg.com/vi/${yt}/hqdefault.jpg" alt="" loading="lazy" data-max="https://i.ytimg.com/vi/${yt}/maxresdefault.jpg">
+  </div><p>${v.title}</p></div>`;
+}
+function bindCrewThumbs(root){
+  root.querySelectorAll('.frame.thumb img[data-max]').forEach(function(img){
+    var t=new Image(); t.onload=function(){ if(t.naturalWidth>=480) img.src=img.dataset.max; }; t.src=img.dataset.max;
+  });
+  root.querySelectorAll('.frame.thumb').forEach(function(frame){
+    function play(){
+      var id=frame.dataset.yt; if(!id||frame.dataset.playing) return;
+      frame.dataset.playing='1';
+      /* silence any page video that had sound */
+      if(Sound.cur){ Sound.cur.mute(); Sound.cur=null; }
+      frame.innerHTML=`<iframe src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    }
+    frame.addEventListener('click',play);
+    frame.addEventListener('keydown',function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); play(); }});
+  });
+}
+function sectionOf(v){ var s=v.section||'wsj'; return s==='home'?'wsj':s; }  /* "home" = old name for "wsj" */
 function render(el,section){
-  var list=VIDEOS.filter(function(v){return (v.section||'home')===section});
+  var list=VIDEOS.filter(function(v){return sectionOf(v)===section});
   list=list.filter(function(v){return v.vertical}).concat(list.filter(function(v){return !v.vertical}));
-  el.className='grid'+(section==='crew'?' grid-crew':'');
+  if(section==='crew'){
+    el.className='grid grid-crew';
+    el.innerHTML=list.map(cardCrew).join('');
+    bindCrewThumbs(el);
+    return;
+  }
+  el.className='grid';
   el.innerHTML=list.map(card).join('');
   var io=new IntersectionObserver(function(es){es.forEach(function(e){
     var c=e.target.ctl; c.inView=e.isIntersecting;
     if(e.isIntersecting) c.play(); else c.pause();
-  })},{threshold:.25,rootMargin:'0px'});
+  })},{threshold:.25});
   el.querySelectorAll('.v').forEach(function(c){ setupCard(c,io); });
 }
 
-var PAGES=[['home','index.html','WSJ'],['wsj-app','wsj-app.html','WSJ App'],['crew','production-crew.html','Production Crew'],['dp','dp-work.html','DP Work']];
+var PAGES=[['wsj-app','./','WSJ App'],['wsj','wsj.html','WSJ'],['crew','production-crew.html','Production Crew'],['dp','dp-work.html','DP Work']];
 function siteNav(cur){
   return '<nav class="top">'+PAGES.map(function(p){return `<a href="${p[1]}" class="${cur===p[0]?'on':''}">${p[2]}</a>`}).join('')+'</nav>';
 }
