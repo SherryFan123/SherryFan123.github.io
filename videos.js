@@ -14,7 +14,7 @@
 //  Production Crew: clean YouTube thumbnail; click to play (no autoplay).
 // ============================================================
 window.VIDEOS = [
-  { title: "Spirit Airlines", source: "media/camera-vv-spiritairv3c.mp4", poster: "media/camera-vv-spiritairv3c.jpg", vertical: true, section: "wsj-app", autoplay: true },  // vv.spiritairv3c.mp4
+  { title: "Divorce: Who Gets What?", source: "media/camera-vv-dw-warv5.mp4", poster: "media/camera-vv-dw-warv5.jpg", vertical: true, section: "wsj-app", autoplay: true },  // vv.dw.warv5.mp4
   { title: "Heard on the Street: Tesla’s AI Spending", source: "media/vertical-042426-vv-heardtesla.mp4", poster: "media/vertical-042426-vv-heardtesla.jpg", vertical: true, section: "wsj-app" },  // 042426_VV.HEARDTESLA.mp4
   { title: "Hungary Elections", source: "media/vertical-vv-hungelexksnewtitle.mp4", poster: "media/vertical-vv-hungelexksnewtitle.jpg", vertical: true, section: "wsj-app" },  // vv.hungelexksnewtitle.mp4
   { title: "529 Plans", source: "media/vertical-33126-vv-529plans.mp4", poster: "media/vertical-33126-vv-529plans.jpg", vertical: true, section: "wsj-app" },  // 33126_VV.529PLANS.mp4
@@ -23,7 +23,7 @@ window.VIDEOS = [
   { title: "U.S. Fighters in Africa", source: "media/vertical-022326afrusfighters-sf.mp4", poster: "media/vertical-022326afrusfighters-sf.jpg", vertical: true, section: "wsj-app" },  // 022326AFRUSFIGHTERS_SF.mp4
   { title: "Inflation", source: "media/camera-041026vv-inflation04101c.mp4", poster: "media/camera-041026vv-inflation04101c.jpg", vertical: true, section: "wsj-app" },  // 041026vv.inflation04101c.mp4
   { title: "Middle Class Rich (Vertical)", source: "media/camera-040426vv-middlerich.mp4", poster: "media/camera-040426vv-middlerich.jpg", vertical: true, section: "wsj-app" },  // 040426vv.middlerich.mp4
-  { title: "Divorce: Who Gets What?", source: "media/camera-vv-dw-warv5.mp4", poster: "media/camera-vv-dw-warv5.jpg", vertical: true, section: "wsj-app", autoplay: true },  // vv.dw.warv5.mp4
+  { title: "Spirit Airlines", source: "media/camera-vv-spiritairv3c.mp4", poster: "media/camera-vv-spiritairv3c.jpg", vertical: true, section: "wsj-app", autoplay: true },  // vv.spiritairv3c.mp4
   { title: "How Divorce Affects Children", source: "media/camera-dw-kids-v7-c.mp4", poster: "media/camera-dw-kids-v7-c.jpg", vertical: true, section: "wsj-app" },  // dw-kids-v7-c.mp4
   { title: "Adjustable-Rate Mortgages Return", source: "media/assist-vv-armresurgencefinal.mp4", poster: "media/assist-vv-armresurgencefinal.jpg", vertical: true, section: "wsj-app" },  // vv.armresurgencefinal.mp4
   { title: "Inflation Bonds", source: "media/camera-vv-inflationbondsfinecut4.mp4", poster: "media/camera-vv-inflationbondsfinecut4.jpg", vertical: true, section: "wsj-app", autoplay: true },  // vv.inflationbondsfinecut4.mp4
